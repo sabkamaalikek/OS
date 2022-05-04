@@ -1,0 +1,190 @@
+Shell script to perform arithematic operation:
+#!/bin/sh
+
+a=10
+b=20
+
+val=`expr $a + $b`
+echo "a + b : $val"
+
+val=`expr $a - $b`
+echo "a - b : $val"
+
+val=`expr $a \* $b`
+echo "a * b : $val"
+
+val=`expr $b / $a`
+echo "b / a : $val"
+
+val=`expr $b % $a`
+echo "b % a : $val"
+
+if [ $a == $b ]
+then
+   echo "a is equal to b"
+fi
+
+if [ $a != $b ]
+then
+   echo "a is not equal to b"
+fi
+
+
+
+Shell script smallest of 3 integer number:
+echo "enter a: "
+read a
+echo "enter b : "
+read b
+echo "enter c : "
+read c
+s=$a
+if [ $b -lt $s ]
+then
+s=$b
+fi
+if [ $c -lt $s ]
+then
+s=$c
+fi
+echo Smallest of $a $b $c is $s
+
+
+Shell script to print multiplication table:
+echo "Enter a Number"
+read n
+i=1
+
+while [ $i -le 10 ]
+do
+          echo " $n x $i = $(( n * i ))"
+          i=$(( i + 1 ))
+done
+
+
+Shell Script for star pattern
+rows=5
+for((i=rows; i>=1; i--))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "* "
+  done
+  echo
+done
+
+
+Shell script to print no of lines,words,character                                                                                                                                                                        
+echo "Enter filename"
+read aa
+if [ -f "$aa" ]
+then 
+echo "file is found"
+echo "number of character:"
+wc -m   $aa 
+echo "number of words:"
+wc -w   $aa
+echo "number of lines:"
+wc -l   $aa
+else
+echo "file not found"
+fi
+
+Shell Script SED command 
+echo "Enter file namme:"
+read file1
+if [ -f "file1" ]
+then
+echo "Before"
+cat $file1
+sed -i 's/good/bad/g' $file1
+echo "After"
+cat $file1
+else
+echo "file not found"
+fi
+
+
+
+Awk script to print range of even numbers                                                                                                                                                                                     
+#!/usr/bin/awk -f
+BEGIN {
+        for (i=1;i<=15;i++)
+        {
+                if(i%2==0)
+        {
+                print i;
+        }
+        }
+}
+
+Awk fibonacci series
+#!/usr/bin/awk -f
+BEGIN{
+ for(i=0;i<=10;i++)
+  {
+   if (i <=1 )
+   {
+    x=0;
+    y=1;
+    print i;
+   }
+   else
+   {
+    z=x+y;
+    print z;
+    x=y;
+    y=z;
+   }
+  }
+}
+
+
+Perl Script Sorting array
+#!/usr/bin/perl
+
+# Initializing an array
+@n = (12, 44, 2, 5, 25, 7, 96, 1);
+
+# Printing Original Array
+print "Original Array: @n\n";
+
+# Sorting numbers with use of
+# spaceship operator
+@x = sort { $a <=> $b } @n;
+
+# Printing sorted array
+print "Array after Sorting: @x";
+
+
+
+Perl script prime or not
+#!/usr/bin/perl 
+print "Enter a number:\n";
+$n=<>;
+$d=0;
+if($n==2)
+{
+print "Prime number.n";
+}
+else
+{
+for($c=2;$c<=$n-1;$c++)
+{
+if($n%$c==0)
+{
+$d=1;
+break;
+}
+}
+if($d==1)
+{
+print "Not prime\n";
+}
+else
+{
+print "Prime number\n";
+}
+}
+
+
