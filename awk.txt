@@ -1,0 +1,33 @@
+### awk -f filename.awk ###
+---even nos---
+#!/usr/bin/awk -f
+BEGIN{
+print("Enter value of n: ")
+getline n <"-"
+	for (i=0;i<=n;i++)
+	{
+		if(i%2==0){
+			print i;
+		}
+	}
+}
+
+---------------------------------------
+--- fibonacci ---
+BEGIN {
+	print"Enter a no: "
+	getline num < "-"
+first=0
+second=1
+print"Fibonacci seires: "
+print first " "
+print second " "
+for (i=2;i<num;++i)
+{
+	temp = first+second
+
+print temp " "
+first = second
+second = temp
+}
+}

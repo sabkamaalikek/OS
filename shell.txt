@@ -1,0 +1,59 @@
+### bash filename.sh ###
+-------------------------------
+
+----- math ------
+echo "Enter value of a:"
+read a
+echo "Enter value of b:"
+read b
+sum=$((a+b))
+echo "Sum = $sum"
+difference=$((a-b))
+echo "Difference = $difference"
+product=$((a*b))
+echo "Product = $product"
+division=$((a/b))
+echo "Division = $division"
+----------------------------------
+
+---- multiplication table -------
+echo "enter a number: "
+read n
+i=1
+while [ $i -le 10 ]
+do
+echo "$n x $i = $((n*i))"
+i=$((i+1))
+done
+------------------------------
+
+----- smallest no ------
+echo "enter a: "
+read a
+echo "enter b : "
+read b
+echo "enter c : "
+read c
+s=$a
+if [ $b -lt $s ]
+then
+s=$b
+fi
+if [ $c -lt $s ]
+then
+s=$c
+fi
+echo Smallest of $a $b $c is $s
+-----------------------------------
+
+------ star pattern ------
+rows=5
+for((i=rows; i>=1; i--))
+do
+for((j=1; j<=i ; j++))
+do
+echo -n "*"
+done
+echo
+done
+------------------------------
